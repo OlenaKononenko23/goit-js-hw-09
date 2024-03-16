@@ -67,8 +67,9 @@ const images = [
   },
 ];
 
-
+document.addEventListener('DOMContentLoaded', (event) => {
 const unorderedList = document.querySelector('.gallery');
+if (unorderedList) {
 const galleryItems = images
   .map(
     image => `
@@ -85,4 +86,6 @@ unorderedList.insertAdjacentHTML('beforeend', galleryItems);
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
+});
+}
 });
